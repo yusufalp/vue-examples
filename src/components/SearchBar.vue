@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="search">
     <input v-model="searchTerm" placeholder="Search videos"/>
     <button @click="onClick" type="button">Search</button>
   </div>
@@ -18,11 +18,12 @@ export default {
 
 <style scoped>
 
-.container {
+.search {
   display: flex;
 }
 input {
   width: 100%;
+  height: 24px;
   flex: 10;
 }
 button {
