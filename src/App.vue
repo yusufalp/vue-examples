@@ -25,7 +25,6 @@ export default {
   },
   methods: {
     onSearchTermChange: function(searchTerm) {
-      console.log("ST",searchTerm);
       axios.get("https://www.googleapis.com/youtube/v3/search", {
         params: {
           key: API_KEY,
@@ -35,7 +34,6 @@ export default {
         }
       })
       .then(response => {
-        console.log(response.data.items)
         this.videos = response.data.items;
       });
     }
@@ -46,7 +44,7 @@ export default {
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  /* text-align: center; */
-  margin-top: 60px;
+  width: 80%;
+  margin: 60px auto 0;
 }
 </style>
