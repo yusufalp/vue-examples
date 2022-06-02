@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <input @input="onInput"/>
+  <div class="container">
+    <input v-model="searchTerm" placeholder="Search videos"/>
+    <button @click="onClick" type="button">Search</button>
   </div>
 </template>
 
@@ -8,8 +9,8 @@
 export default {
   name: "SearchBar",
   methods: {
-    onInput: function(event) {
-      this.$emit("searchTermChange", event.target.value);
+    onClick: function() {
+      this.$emit("searchTermChange", this.searchTerm);
     }
   }
 }
@@ -17,4 +18,14 @@ export default {
 
 <style scoped>
 
+.container {
+  display: flex;
+}
+input {
+  width: 100%;
+  flex: 10;
+}
+button {
+  flex: 2;
+}
 </style>
